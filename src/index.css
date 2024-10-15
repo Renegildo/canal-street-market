@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Ogg";
+  font-style: normal;
+  font-weight: 300;
+  src: url(/src/assets/fonts/Ogg-Light.ttf) format("truetype");
+}
