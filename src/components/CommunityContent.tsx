@@ -10,10 +10,13 @@ const CommunityContent = ({
       className="content opacity-0" 
       style={{display: currentPage === "community" ? "block" : "none"}}
     >
-      <div className="m-20 mr-64">
-        <h1 className="text-7xl font-ogg mt-32 max-w-[1030px]">
-          Community content
+      <div className="m-20 mr-64 relative">
+        <h1 className="text-[10rem] leading-[1] font-ogg mt-32 max-w-[1030px] font-bold">
+          Canal St. <br />
+          COmmunity
         </h1>
+
+        <h2 className="absolute top-0 -right-48 text-7xl">文化</h2>
       </div>
     </div>
   );
