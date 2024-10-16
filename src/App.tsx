@@ -3,8 +3,11 @@ import gsap from "gsap";
 import { useState } from "react";
 import logo from "/src/assets/images/logo.svg";
 import heroImage from "/src/assets/images/home-hero.avif";
-
-type Page = "home" | "food" | "retail" | "community";
+import { Page } from "./types";
+import HomeContent from "./components/HomeContent";
+import FoodContent from "./components/FoodContent";
+import RetailContent from "./components/RetailContent";
+import CommunityContent from "./components/CommunityContent";
 
 const App = () => {
   const [currentPage, setCurrentPage] = useState<Page>("home");
@@ -77,22 +80,7 @@ const App = () => {
         className="font-mono min-w-16 bg-white h-full pt-20 vertical-item -translate-y-[100%] home"
         onClick={() => updateCurrentPage("home")}
       >
-        <div
-          className="content opacity-0"
-          style={{display: currentPage === "home" ? "block" : "none"}}
-        >
-          <div className="m-20 mr-64">
-            <a href="/">
-              <img src={logo} />
-            </a>
-            <h1 className="text-7xl font-ogg mt-32 max-w-[1030px]">
-              Canal Street Market is a carefully curated retail market, food hall {"&"}
-              community space open year-round at 265 Canal Street. Support Small Business this weekend!
-            </h1>
-          </div>
-
-          <img src={heroImage} />
-        </div>
+        <HomeContent currentPage={currentPage} />
 
         <div
           className="flex flex-col items-center h-full button-container"
@@ -109,18 +97,7 @@ const App = () => {
         className="font-mono min-w-16 bg-cyan h-ful pt-20 vertical-item -translate-y-[100%] food"
         onClick={() => updateCurrentPage("food")}
       >
-        <div
-          style={{display: currentPage === "food" ? "block" : "none"}}
-          className="content opacity-0"
-        >
-          <div className="m-20 mr-64">
-            <h1 className="text-7xl font-ogg mt-32 max-w-[1030px]">
-              Food content
-            </h1>
-          </div>
-
-          <img src={heroImage} />
-        </div>
+        <FoodContent currentPage={currentPage} />
 
         <div
           className="flex flex-col items-center h-full button-container"
@@ -137,18 +114,7 @@ const App = () => {
         className="font-mono min-w-16 bg-red h-full pt-20 vertical-item -translate-y-[100%] retail"
         onClick={() => updateCurrentPage("retail")}
       >
-        <div
-          className="content opacity-0"
-          style={{display: currentPage === "retail" ? "block" : "none"}}
-        >
-          <div className="m-20 mr-64">
-            <h1 className="text-7xl font-ogg mt-32 max-w-[1030px]">
-              Retail content
-            </h1>
-          </div>
-
-          <img src={heroImage} />
-        </div>
+        <RetailContent currentPage={currentPage} />
 
         <div
           className="flex flex-col items-center h-full button-container"
@@ -165,18 +131,7 @@ const App = () => {
         className="font-mono min-w-16 pt-20 bg-yellow h-full vertical-item -translate-y-[100%] community"
         onClick={() => updateCurrentPage("community")}
       >
-        <div
-          className="content opacity-0" 
-          style={{display: currentPage === "community" ? "block" : "none"}}
-        >
-          <div className="m-20 mr-64">
-            <h1 className="text-7xl font-ogg mt-32 max-w-[1030px]">
-              Community content
-            </h1>
-          </div>
-
-          <img src={heroImage} />
-        </div>
+        <CommunityContent currentPage={currentPage} />
 
         <div
           className="h-full flex flex-col items-center justify-center button-container"
