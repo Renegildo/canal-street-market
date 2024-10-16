@@ -1,8 +1,6 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useState } from "react";
-import logo from "/src/assets/images/logo.svg";
-import heroImage from "/src/assets/images/home-hero.avif";
 import { Page } from "./types";
 import HomeContent from "./components/HomeContent";
 import FoodContent from "./components/FoodContent";
